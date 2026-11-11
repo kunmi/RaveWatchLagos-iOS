@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// Share text, ported from `lib/services/share_event.dart`.
 ///
@@ -69,5 +70,25 @@ enum ShareService {
             }
         }
         return lines.joined(separator: "\n")
+    }
+
+    /// Presents the iOS share sheet for already-built share text.
+    static func presentShareSheet(_ text: String) {
+        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = scene.windows.first,
+              let root = window.rootViewController else { return }
+        var presenter = root
+        while let presented = presenter.presentedViewController {
+            presenter = presented
+        }
+        if let popover = activity.popoverPresentationController {
+            popover.sourceView = presenter.view
+            popover.sourceRect = CGRect(x: presenter.view.bounds.midX,
+                                        y: presenter.view.bounds.midY,
+                                        width: 0, height: 0)
+            popover.permittedArrowDirections = []
+        }
+        presenter.present(activity, animated: true)
     }
 }

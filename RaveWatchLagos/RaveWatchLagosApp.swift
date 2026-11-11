@@ -4,46 +4,74 @@ import SwiftUI
 struct RaveWatchLagosApp: App {
     @StateObject private var eventStore = EventStore()
     @StateObject private var userStore = UserStore()
+    @StateObject private var metrics = MetricsService()
+    @StateObject private var newEventsStore = NewEventsStore()
+    @StateObject private var tourStore = TourStore()
+    @StateObject private var soundService = SoundService()
+    @StateObject private var toastCenter = ToastCenter()
+    @StateObject private var tourController = TourController()
+    @StateObject private var coordinator = TabNavigation()
 
-    /// v1 ships with the local-only attending service. Swap in
-    /// `SupabaseAttendingService` here once Supabase credentials exist —
-    /// see the TODO in Services/AttendingService.swift.
-    private let attendingService: AttendingService = LocalAttendingService()
+    @State private var showSplash = true
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(eventStore)
-                .environmentObject(userStore)
-                .environment(\.attendingService, attendingService)
-                .preferredColorScheme(userStore.theme.colorScheme)
-                .task {
-                    await eventStore.load()
+            ZStack {
+                if showSplash {
+                    SplashView()
+                } else {
+                    ContentView()
                 }
+            }
+            .environmentObject(eventStore)
+            .environmentObject(userStore)
+            .environmentObject(metrics)
+            .environmentObject(newEventsStore)
+            .environmentObject(tourStore)
+            .environmentObject(soundService)
+            .environmentObject(toastCenter)
+            .environmentObject(tourController)
+            .environmentObject(coordinator)
+            .preferredColorScheme(userStore.theme.colorScheme)
+            .task {
+                // The stores and feed load behind the splash; the tour
+                // follows the splash on first launch.
+                eventStore.newEventsStore = newEventsStore
+                await eventStore.load()
+            }
+            .onAppear {
+                // Swipe sounds start loading NOW, behind the 2-second
+                // splash, so they are fully loaded before the first
+                // swipe can happen.
+                soundService.preload()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation(.easeInOut(duration: 0.35)) {
+                        showSplash = false
+                    }
+                    if !tourStore.seen {
+                        tourController.start()
+                    }
+                }
+            }
+            .onChange(of: scenePhase) { _, phase in
+                // Returning to the app refetches the feed when more
+                // than 15 minutes passed since the last fetch kick.
+                if phase == .active {
+                    Task {
+                        await eventStore.resumeRefetchIfNeeded()
+                    }
+                }
+            }
         }
-    }
-}
-
-// MARK: - Attending service environment key
-
-private struct AttendingServiceKey: EnvironmentKey {
-    static let defaultValue: AttendingService = LocalAttendingService()
-}
-
-extension EnvironmentValues {
-    var attendingService: AttendingService {
-        get { self[AttendingServiceKey.self] }
-        set { self[AttendingServiceKey.self] = newValue }
     }
 }
 
 // MARK: - Shared styling
 
 extension Color {
-    /// Neon pink accent, matching the app icon and the AccentColor asset.
+    /// Deep purple accent (Material 3 seed colour), matching the
+    /// Android app's `ColorScheme.fromSeed(deepPurple)` and the
+    /// AccentColor asset.
     static let raveAccent = Color("AccentColor")
-
-    /// Near-black night background. The system background is used in light
-    /// mode; this is applied explicitly where the night look is wanted.
-    static let nightBackground = Color(red: 0.04, green: 0.04, blue: 0.06)
 }

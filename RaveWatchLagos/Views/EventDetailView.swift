@@ -315,25 +315,8 @@ struct EventDetailView: View {
     }
 
     private func shareEvent() {
-        let text = ShareService.shareText(for: event)
         metrics.recordShare(event.id)
-        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = scene.windows.first,
-           let root = window.rootViewController {
-            var presenter = root
-            while let presented = presenter.presentedViewController {
-                presenter = presented
-            }
-            if let popover = activity.popoverPresentationController {
-                popover.sourceView = presenter.view
-                popover.sourceRect = CGRect(x: presenter.view.bounds.midX,
-                                            y: presenter.view.bounds.midY,
-                                            width: 0, height: 0)
-                popover.permittedArrowDirections = []
-            }
-            presenter.present(activity, animated: true)
-        }
+        ShareService.presentShareSheet(ShareService.shareText(for: event))
     }
 
     private var followButton: some View {

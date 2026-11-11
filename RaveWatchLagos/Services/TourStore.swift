@@ -167,22 +167,6 @@ struct TourStep {
     ]
 }
 
-/// Publishes the on-screen frames of the tour's anchor views, so the
-/// overlay can cut its spotlight holes around them. Views report their
-/// frame in window coordinates via the `tourAnchor(_:)` modifier.
-@MainActor
-final class TourAnchorStore: ObservableObject {
-    @Published private(set) var frames: [TourAnchor: CGRect] = [:]
-
-    func setFrame(_ anchor: TourAnchor, _ frame: CGRect) {
-        frames[anchor] = frame
-    }
-
-    func clearFrame(_ anchor: TourAnchor) {
-        frames.removeValue(forKey: anchor)
-    }
-}
-
 // MARK: - Tour demo events
 
 /// The tour's example cards, ported from
