@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B9A64518FC18A49245A4727 /* RaveWatchLagosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0F0FB1CC6F7C11C1B817C /* RaveWatchLagosApp.swift */; };
+		CC44CF4EE79649EC0064B33B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB13B4ED57C474C415B14A6B /* Event.swift */; };
+		87C6675D7CA8D45CFFA5A00E /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98ED55E76854F568433A848 /* EventStore.swift */; };
+		1E76900335F4CA8478598577 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912596C4FF73D3B3B80914AA /* UserStore.swift */; };
+		51954633D6BE1CC2F56F08E5 /* AttendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7C9EF464CB7FC77E02603 /* AttendingService.swift */; };
+		C2A1C293190C1B34CF55B6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F679547202DF86F464C7A45 /* ContentView.swift */; };
+		4EF7B82A2750194F4DFF94AD /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */; };
+		4A24C12A58D7BA076ECF181D /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */; };
+		E8298F402501B39167CAF4A5 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8969A761F551711FEDCE26F /* EventDetailView.swift */; };
+		A742BF0E93DFAB1A487C6D8A /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C5B0109960A181EE29426 /* FollowingView.swift */; };
+		8B64210A773B43DD076D020C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */; };
+		11B0910BAE3B58E73468806E /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */; };
+		1BFB8452BC4F0E8CDCEDEED0 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DCC6686BA01E1CE40D29576F /* events.json */; };
+		C950ECD889C4A8E7CF834114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957818ECB6A9811B7FA24A50 /* Assets.xcassets */; };
+		352084B76576FDA5269CE1B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81C13B209B6CFD249E82AC9D /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ABF0F0FB1CC6F7C11C1B817C /* RaveWatchLagosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaveWatchLagosApp.swift; sourceTree = "<group>"; };
+		FB13B4ED57C474C415B14A6B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D98ED55E76854F568433A848 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		912596C4FF73D3B3B80914AA /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		1FF7C9EF464CB7FC77E02603 /* AttendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingService.swift; sourceTree = "<group>"; };
+		9F679547202DF86F464C7A45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		E8969A761F551711FEDCE26F /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		C96C5B0109960A181EE29426 /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
+		2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		DCC6686BA01E1CE40D29576F /* events.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = events.json; sourceTree = "<group>"; };
+		957818ECB6A9811B7FA24A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81C13B209B6CFD249E82AC9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		958B1B4EB0B096BFECDC7CA6 /* RaveWatchLagos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaveWatchLagos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99A053523B8E1E66A9491327 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		117689A67C0AA50CC398D3AF = {isa = PBXGroup; children = (
+				595D44826666F5308511A420 /* RaveWatchLagos */,
+				C9E0D49E1EED929B5CB449B9 /* Products */,
+			); sourceTree = "<group>"; };
+		595D44826666F5308511A420 /* RaveWatchLagos */ = {isa = PBXGroup; children = (
+				ABF0F0FB1CC6F7C11C1B817C /* RaveWatchLagosApp.swift */,
+				FACC034D314361B37C8B8321 /* Models */,
+				AC389BFBC44086ADA8DC0E2F /* Services */,
+				66186741B7DC6DE8646F56E0 /* Views */,
+				7F84F3379E136D1AE12EB339 /* Resources */,
+				957818ECB6A9811B7FA24A50 /* Assets.xcassets */,
+				B534E9F9E0A0A95EE7E18627 /* Preview Content */,
+			); path = RaveWatchLagos; sourceTree = "<group>"; };
+		FACC034D314361B37C8B8321 /* Models */ = {isa = PBXGroup; children = (
+				FB13B4ED57C474C415B14A6B /* Event.swift */,
+			); path = Models; sourceTree = "<group>"; };
+		AC389BFBC44086ADA8DC0E2F /* Services */ = {isa = PBXGroup; children = (
+				D98ED55E76854F568433A848 /* EventStore.swift */,
+				912596C4FF73D3B3B80914AA /* UserStore.swift */,
+				1FF7C9EF464CB7FC77E02603 /* AttendingService.swift */,
+			); path = Services; sourceTree = "<group>"; };
+		66186741B7DC6DE8646F56E0 /* Views */ = {isa = PBXGroup; children = (
+				9F679547202DF86F464C7A45 /* ContentView.swift */,
+				F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */,
+				8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */,
+				E8969A761F551711FEDCE26F /* EventDetailView.swift */,
+				C96C5B0109960A181EE29426 /* FollowingView.swift */,
+				2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */,
+				66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */,
+			); path = Views; sourceTree = "<group>"; };
+		7F84F3379E136D1AE12EB339 /* Resources */ = {isa = PBXGroup; children = (
+				DCC6686BA01E1CE40D29576F /* events.json */,
+			); path = Resources; sourceTree = "<group>"; };
+		B534E9F9E0A0A95EE7E18627 /* Preview Content */ = {isa = PBXGroup; children = (
+				81C13B209B6CFD249E82AC9D /* Preview Assets.xcassets */,
+			); path = "Preview Content"; sourceTree = "<group>"; };
+		C9E0D49E1EED929B5CB449B9 /* Products */ = {isa = PBXGroup; children = (
+				958B1B4EB0B096BFECDC7CA6 /* RaveWatchLagos.app */,
+			); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C7504B30A4B77D1D7799F03 /* RaveWatchLagos */ = {isa = PBXNativeTarget; buildConfigurationList = 8979D57D5F05122F8B897C2F /* Build configuration list for PBXNativeTarget "RaveWatchLagos" */; buildPhases = (
+			C7725E4DBDC6F8990C483E98 /* Sources */,
+			99A053523B8E1E66A9491327 /* Frameworks */,
+			B647A333F7219FA2B3612A0C /* Resources */,
+		); buildRules = (
+		); dependencies = (
+		); name = RaveWatchLagos; productName = RaveWatchLagos; productReference = 958B1B4EB0B096BFECDC7CA6 /* RaveWatchLagos.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		780886071E4838EEDC4C025E /* Project object */ = {isa = PBXProject; attributes = {
+			BuildIndependentTargetsInParallel = 1;
+			LastSwiftUpdateCheck = 1500;
+			LastUpgradeCheck = 1500;
+			TargetAttributes = {
+				5C7504B30A4B77D1D7799F03 = {
+					CreatedOnToolsVersion = 15.0;
+				};
+			};
+		}; buildConfigurationList = AE0E86B581EC17B59263325C /* Build configuration list for PBXProject "RaveWatchLagos" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (
+			en,
+			Base,
+		); mainGroup = 117689A67C0AA50CC398D3AF; productRefGroup = C9E0D49E1EED929B5CB449B9 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (
+			5C7504B30A4B77D1D7799F03 /* RaveWatchLagos */,
+		); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B647A333F7219FA2B3612A0C /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+				1BFB8452BC4F0E8CDCEDEED0 /* events.json in Resources */,
+				C950ECD889C4A8E7CF834114 /* Assets.xcassets in Resources */,
+				352084B76576FDA5269CE1B8 /* Preview Assets.xcassets in Resources */,
+			); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7725E4DBDC6F8990C483E98 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+				3B9A64518FC18A49245A4727 /* RaveWatchLagosApp.swift in Sources */,
+				CC44CF4EE79649EC0064B33B /* Event.swift in Sources */,
+				87C6675D7CA8D45CFFA5A00E /* EventStore.swift in Sources */,
+				1E76900335F4CA8478598577 /* UserStore.swift in Sources */,
+				51954633D6BE1CC2F56F08E5 /* AttendingService.swift in Sources */,
+				C2A1C293190C1B34CF55B6BE /* ContentView.swift in Sources */,
+				4EF7B82A2750194F4DFF94AD /* DiscoverView.swift in Sources */,
+				4A24C12A58D7BA076ECF181D /* EventRow.swift in Sources */,
+				E8298F402501B39167CAF4A5 /* EventDetailView.swift in Sources */,
+				A742BF0E93DFAB1A487C6D8A /* FollowingView.swift in Sources */,
+				8B64210A773B43DD076D020C /* ProfileView.swift in Sources */,
+				11B0910BAE3B58E73468806E /* PrivacyPolicyView.swift in Sources */,
+			); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4E6994A0BAB2560951264E31 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFS = "";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			}; name = Debug; };
+		A731832F42BF2AC0EC09356C /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFS = "";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			}; name = Release; };
+		F9B593C63AAE1EFC1A604BB1 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RaveWatchLagos;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.ravewatchlagos.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			}; name = Debug; };
+		05A3A10880F147A003AC00BA /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RaveWatchLagos;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.ravewatchlagos.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE0E86B581EC17B59263325C /* Build configuration list for PBXProject "RaveWatchLagos" */ = {isa = XCConfigurationList; buildConfigurations = (
+			4E6994A0BAB2560951264E31 /* Debug */,
+			A731832F42BF2AC0EC09356C /* Release */,
+		); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		8979D57D5F05122F8B897C2F /* Build configuration list for PBXNativeTarget "RaveWatchLagos" */ = {isa = XCConfigurationList; buildConfigurations = (
+			F9B593C63AAE1EFC1A604BB1 /* Debug */,
+			05A3A10880F147A003AC00BA /* Release */,
+		); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 780886071E4838EEDC4C025E /* Project object */;
+}
