@@ -35,14 +35,30 @@ struct PriceTier: Codable, Identifiable, Hashable {
         priceDisplay = try container.decodeIfPresent(String.self, forKey: .priceDisplay)
     }
 
-    /// "Free" / "₦3,030" / the verbatim non-naira display / "Price TBA".
-    var display: String {
+    /// The price alone: "Free" / "₦3,030" / a verbatim non-naira
+    /// display / "Price TBA".
+    var priceText: String {
         if let priceNaira {
             if priceNaira == 0 { return "Free" }
             return Event.formatNaira(priceNaira)
         }
         if let priceDisplay, !priceDisplay.isEmpty { return priceDisplay }
         return "Price TBA"
+    }
+
+    /// The detail page's tier line, exactly as the Flutter model
+    /// renders it: "Name: ₦3,030", "Free — note" (or "Free"),
+    /// "Name: $19.98", "Name: TBA".
+    var display: String {
+        if priceNaira == nil {
+            if let priceDisplay, !priceDisplay.isEmpty { return "\(name): \(priceDisplay)" }
+            return "\(name): TBA"
+        }
+        if priceNaira == 0 {
+            if let note, !note.isEmpty { return "Free — \(note)" }
+            return "Free"
+        }
+        return "\(name): \(Event.formatNaira(priceNaira!))"
     }
 }
 
