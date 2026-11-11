@@ -1,55 +1,48 @@
 import Foundation
 
-/// Reports anonymous attending counts.
+/// Reports anonymous attending counts, and returns the new total.
 ///
-/// Per the privacy policy, an attending tap sends ONLY the event's ID and a
-/// +1/−1 change to the counter service. No identifier of any kind — no name,
-/// account, device ID or IP-based profile — is attached to or stored with
-/// the tap. The totals are anonymous aggregates shown to all users as an
-/// estimate of attendance.
+/// Per the privacy policy, an attending tap sends ONLY the event's ID
+/// and a +1/−1 change to the counter service. No identifier of any kind
+/// — no name, account, device ID or IP-based profile — is attached to
+/// or stored with the tap. The totals are anonymous aggregates shown to
+/// all users as an estimate of attendance.
+///
+/// The return value is the new total from the backend, or nil when the
+/// backend is unreachable — callers treat nil as "count unknown" and
+/// fall back to local arithmetic (the locally-applied tap on a failed
+/// bump is acceptable, per the Flutter app's v1.9 audit note).
 protocol AttendingService {
-    /// Reports a change for an event. `delta` is +1 (now attending), −1
-    /// (now not attending), or a net change when a previous answer changes.
-    func sendAttendingChange(eventID: String, delta: Int) async
+    /// Reports a change for an event. `delta` is +1 (now attending) or
+    /// −1 (no longer attending). Returns the new total, or nil.
+    func sendAttendingChange(eventID: String, delta: Int) async -> Int?
 }
 
-// MARK: - Local-only implementation (v1)
+// MARK: - Local-only implementation (offline fallback)
 
-/// v1 implementation: records the change on-device only and reports nothing
-/// to any server. The displayed count is the feed's base `attendingCount`
-/// plus the local delta from `UserStore`.
-///
-/// This is intentional, not an oversight: the iOS port has no Supabase
-/// project or credentials yet, and inventing a network call to a service
-/// that does not exist would be worse than a clearly-marked stub.
+/// Records the change on-device only and reports nothing to any
+/// server. Used when the Supabase backend is unreachable: the displayed
+/// count is the feed's base `attendingCount` plus the local delta, and
+/// a failed count sync must never block the UI.
 final class LocalAttendingService: AttendingService {
-    func sendAttendingChange(eventID: String, delta: Int) async {
-        // Local-only: nothing to send. The delta is already persisted in
-        // UserStore.attendingState and reflected in the UI immediately.
+    func sendAttendingChange(eventID: String, delta: Int) async -> Int? {
+        // Local-only: nothing to send. The delta is already persisted
+        // in UserStore.attendingIDs and reflected in the UI immediately.
+        nil
     }
 }
 
-// MARK: - TODO: Supabase implementation (roadmap)
+// MARK: - Live Supabase implementation
 
-/*
- TODO (Supabase): implement a `SupabaseAttendingService` conforming to
- `AttendingService`, and inject it in `RaveWatchLagosApp` once the project
- has credentials. Suggested shape — do NOT ship with placeholder keys:
+/// The live implementation: POSTs the +1/−1 bump to the Supabase
+/// `bump_attending` RPC (a security-definer function, so anonymous
+/// users can only move a counter by ±1 per call) and returns the new
+/// total. On any failure it returns nil and the caller falls back to
+/// local arithmetic — the tap itself is never lost.
+final class SupabaseAttendingService: AttendingService {
+    private let counts = SupabaseAttendingCounts()
 
-     final class SupabaseAttendingService: AttendingService {
-         private let url: URL        // e.g. https://<project>.supabase.co/rest/v1/rpc/attending_delta
-         private let anonKey: String // Supabase anon key, from the app config — never hard-coded
-         func sendAttendingChange(eventID: String, delta: Int) async {
-             // POST {"event_id": eventID, "delta": delta} with
-             // `apikey` / `Authorization: Bearer <anonKey>` headers.
-             // The server-side function must apply the delta to a single
-             // running total per event and store NO identifier with it.
-             // On failure, swallow the error: the local delta in UserStore
-             // is the source of truth for this device, and a failed count
-             // sync must never block the UI.
-         }
-     }
-
- The feed's `attendingCount` remains the base total; the Supabase aggregate
- replaces it once the live feed starts publishing server totals.
- */
+    func sendAttendingChange(eventID: String, delta: Int) async -> Int? {
+        await counts.bump(eventID: eventID, delta: delta)
+    }
+}

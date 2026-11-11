@@ -3,6 +3,10 @@ import SwiftUI
 
 /// The user's on-device theme choice. Night is the default: this is a
 /// nightlife app and the feed is read mostly after dark.
+///
+/// The Flutter app toggles night/light only (`ui.themeMode`, "dark" /
+/// "light"). iOS adds "system" as a third choice — an iOS-appropriate
+/// extension, stored under the same key.
 enum AppTheme: String, CaseIterable, Codable {
     case night
     case light
@@ -16,6 +20,24 @@ enum AppTheme: String, CaseIterable, Codable {
         }
     }
 
+    /// The value stored under `ui.themeMode` ("dark" / "light" /
+    /// "system" — the first two match the Flutter app's values).
+    var storedValue: String {
+        switch self {
+        case .night: return "dark"
+        case .light: return "light"
+        case .system: return "system"
+        }
+    }
+
+    init(storedValue: String) {
+        switch storedValue {
+        case "light": self = .light
+        case "system": self = .system
+        default: self = .night
+        }
+    }
+
     var colorScheme: ColorScheme? {
         switch self {
         case .night: return .dark
@@ -26,48 +48,53 @@ enum AppTheme: String, CaseIterable, Codable {
 }
 
 /// Everything the app remembers about the user lives here, on the device
-/// only (UserDefaults). Nothing in this store ever leaves the phone — see
+/// only. Nothing in this store ever leaves the phone — see
 /// PrivacyPolicyView and the data repo's privacy-policy.html.
+///
+/// Followed and attending events are persisted like the Flutter app's
+/// `FollowStore` / `AttendingStore`: a triple-redundant id set
+/// (preference string + file mirror + legacy recovery), keyed
+/// `follow.events` / `attending.events`.
+///
+/// Attending is a SET of event ids, exactly as in Flutter — there is no
+/// "explicit No" state. The detail page's Yes/No control shows Yes
+/// selected while the event is in the set; tapping No removes it
+/// (bump −1 when it was there). This replaces the v1 three-state
+/// `[String: Bool]` model, which counted a "No" as −1 — a state the
+/// Android app never had.
 @MainActor
 final class UserStore: ObservableObject {
     // MARK: Keys
 
     private enum Key {
-        static let followed = "ravewatchlagos.followedEventIDs"
-        static let attending = "ravewatchlagos.attendingState"
-        static let theme = "ravewatchlagos.theme"
-        static let eventsViewed = "ravewatchlagos.stats.eventsViewed"
-        static let eventsShared = "ravewatchlagos.stats.eventsShared"
+        static let theme = "ui.themeMode"
     }
 
     // MARK: State
 
     @Published private(set) var followedEventIDs: Set<String> = []
-    /// true = attending (counts as +1), false = not attending (counts as −1).
-    /// Absent = no answer given. Mirrors the privacy policy: a tap sends only
-    /// the event ID and a +1/−1 change — see AttendingService.
-    @Published private(set) var attendingState: [String: Bool] = [:]
+    @Published private(set) var attendingEventIDs: Set<String> = []
     @Published var theme: AppTheme = .night {
         didSet { saveTheme() }
     }
-    @Published private(set) var eventsViewedCount = 0
-    @Published private(set) var eventsSharedCount = 0
 
+    private let followStore: PersistedIdSet
+    private let attendingStore: PersistedIdSet
     private let defaults: UserDefaults
+    private let mirror = SettingsMirror()
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
-        followedEventIDs = Set(defaults.stringArray(forKey: Key.followed) ?? [])
-        if let data = defaults.data(forKey: Key.attending),
-           let decoded = try? JSONDecoder().decode([String: Bool].self, from: data) {
-            attendingState = decoded
+        followStore = PersistedIdSet(key: "follow.events", fileName: "follow_events.json", defaults: defaults)
+        attendingStore = PersistedIdSet(key: "attending.events", fileName: "attending_events.json", defaults: defaults)
+        followedEventIDs = followStore.load()
+        attendingEventIDs = attendingStore.load()
+        if let raw = defaults.string(forKey: Key.theme) {
+            theme = AppTheme(storedValue: raw)
+        } else if let mirrored = mirror.readAll()[Key.theme] as? String {
+            theme = AppTheme(storedValue: mirrored)
+            defaults.set(mirrored, forKey: Key.theme)
         }
-        if let raw = defaults.string(forKey: Key.theme),
-           let stored = AppTheme(rawValue: raw) {
-            theme = stored
-        }
-        eventsViewedCount = defaults.integer(forKey: Key.eventsViewed)
-        eventsSharedCount = defaults.integer(forKey: Key.eventsShared)
     }
 
     // MARK: - Following
@@ -76,72 +103,60 @@ final class UserStore: ObservableObject {
         followedEventIDs.contains(event.id)
     }
 
-    func toggleFollow(_ event: Event) {
+    /// Toggles the follow and returns the new state (true = following).
+    /// A follow records a metric; the caller bumps the shared count.
+    @discardableResult
+    func toggleFollow(_ event: Event) -> Bool {
+        let nowFollowing: Bool
         if followedEventIDs.contains(event.id) {
             followedEventIDs.remove(event.id)
+            nowFollowing = false
         } else {
             followedEventIDs.insert(event.id)
+            nowFollowing = true
         }
-        defaults.set(Array(followedEventIDs), forKey: Key.followed)
+        followStore.save(followedEventIDs)
+        objectWillChange.send()
+        return nowFollowing
     }
 
     var followedCount: Int { followedEventIDs.count }
 
     // MARK: - Attending
 
-    /// The local delta this device contributes to an event's attending total:
-    /// +1 while attending, −1 while explicitly not attending, 0 otherwise.
-    func attendingDelta(for event: Event) -> Int {
-        switch attendingState[event.id] {
-        case true: return 1
-        case false: return -1
-        case nil: return 0
-        }
+    func isAttending(_ event: Event) -> Bool {
+        attendingEventIDs.contains(event.id)
     }
 
-    func attendingChoice(for event: Event) -> Bool? {
-        attendingState[event.id]
-    }
-
-    /// Records the user's answer and returns the delta to report.
-    /// Pass `nil` to clear a previous answer.
+    /// Sets the attending state. Returns true when the set changed —
+    /// the caller bumps the shared count by +1 (going) or −1 (not
+    /// going) only then, exactly as the Flutter detail page does.
     @discardableResult
-    func setAttending(_ event: Event, choice: Bool?) -> Int {
-        let previous = attendingDelta(for: event)
-        if let choice {
-            attendingState[event.id] = choice
+    func setAttending(_ event: Event, going: Bool) -> Bool {
+        let changed: Bool
+        if going {
+            changed = attendingEventIDs.insert(event.id).inserted
         } else {
-            attendingState.removeValue(forKey: event.id)
+            changed = attendingEventIDs.remove(event.id) != nil
         }
-        saveAttending()
-        return attendingDelta(for: event) - previous
-    }
-
-    private func saveAttending() {
-        if let data = try? JSONEncoder().encode(attendingState) {
-            defaults.set(data, forKey: Key.attending)
+        if changed {
+            attendingStore.save(attendingEventIDs)
+            objectWillChange.send()
         }
+        return changed
     }
 
-    var attendingYesCount: Int {
-        attendingState.values.filter { $0 }.count
-    }
-
-    // MARK: - Usage stats (on-device only)
-
-    func markViewed(_ event: Event) {
-        eventsViewedCount += 1
-        defaults.set(eventsViewedCount, forKey: Key.eventsViewed)
-    }
-
-    func markShared(_ event: Event) {
-        eventsSharedCount += 1
-        defaults.set(eventsSharedCount, forKey: Key.eventsShared)
-    }
+    var attendingYesCount: Int { attendingEventIDs.count }
 
     // MARK: - Theme
 
+    /// The app-bar toggle: night ↔ light. (System is chosen in Settings.)
+    func toggleTheme() {
+        theme = theme == .night ? .light : .night
+    }
+
     private func saveTheme() {
-        defaults.set(theme.rawValue, forKey: Key.theme)
+        defaults.set(theme.storedValue, forKey: Key.theme)
+        mirror.writeKey(Key.theme, theme.storedValue)
     }
 }
