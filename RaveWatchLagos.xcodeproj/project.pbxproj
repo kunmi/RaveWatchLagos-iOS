@@ -13,15 +13,36 @@
 		1E76900335F4CA8478598577 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912596C4FF73D3B3B80914AA /* UserStore.swift */; };
 		51954633D6BE1CC2F56F08E5 /* AttendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF7C9EF464CB7FC77E02603 /* AttendingService.swift */; };
 		C2A1C293190C1B34CF55B6BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F679547202DF86F464C7A45 /* ContentView.swift */; };
-		4EF7B82A2750194F4DFF94AD /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */; };
-		4A24C12A58D7BA076ECF181D /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */; };
 		E8298F402501B39167CAF4A5 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8969A761F551711FEDCE26F /* EventDetailView.swift */; };
 		A742BF0E93DFAB1A487C6D8A /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C5B0109960A181EE29426 /* FollowingView.swift */; };
-		8B64210A773B43DD076D020C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */; };
 		11B0910BAE3B58E73468806E /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */; };
 		1BFB8452BC4F0E8CDCEDEED0 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = DCC6686BA01E1CE40D29576F /* events.json */; };
 		C950ECD889C4A8E7CF834114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957818ECB6A9811B7FA24A50 /* Assets.xcassets */; };
 		352084B76576FDA5269CE1B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81C13B209B6CFD249E82AC9D /* Preview Assets.xcassets */; };
+		B2F61D9B05BC4234B1DCB861 /* BugReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698606C81C1949C2A3EF853F /* BugReport.swift */; };
+		23EC75F2014B4E168D2FFE91 /* DateWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72C5DAD472F4F56BA86B417 /* DateWindow.swift */; };
+		3ADCEDBB54CA469BB67A089A /* FlyerImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD5B38EDCC4AE1A1610F1F /* FlyerImageCache.swift */; };
+		1CC125BAC72846EA8942B759 /* MetricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE653534814D77842EECA2 /* MetricsService.swift */; };
+		46E3B7F390644CE79CD8A9EA /* NewEventsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBB8FE8F79482E9D1A63C1 /* NewEventsStore.swift */; };
+		155850F907EF4801BD7A432D /* PersistedIdSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B26066106C4FA6B68CF42D /* PersistedIdSet.swift */; };
+		BB1EB301ABF04649ABD402FD /* RideLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D87BA21931D4030970AC556 /* RideLauncher.swift */; };
+		DA017E6A52B54E3EA5AEEF96 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647405308CF245C5B123D8E5 /* ShareService.swift */; };
+		318B90D574054538B578C866 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDA85D9EA84DF2A411B954 /* SoundService.swift */; };
+		0BC2F67A83FE41F393E8BF5E /* SupabaseCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682A6D70C17446DBC8F7EF7 /* SupabaseCounts.swift */; };
+		66A6D4E8E69540DBB231B008 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4378AB779744080AD9C017B /* ToastCenter.swift */; };
+		A1BB949ABC7B42B184FE7A4D /* TourStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09281DE4461B40C1B5703DE9 /* TourStore.swift */; };
+		5A2E3626433A4AABA70E3478 /* VersionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE600C045524459381E05804 /* VersionLabel.swift */; };
+		B07404D1E696432CA3729450 /* AttendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C575BA1C08645CD91E5F77C /* AttendingView.swift */; };
+		26EA5C41C8BA427AB3339977 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21171B902FFB452CAF354193 /* EventCardView.swift */; };
+		86532000E558487A94A24DE5 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622AB923463F43D9911491E7 /* FeedView.swift */; };
+		054ED4712B59450DBE8012C1 /* FlippableFlyerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBD883D6334E5484F05EB9 /* FlippableFlyerView.swift */; };
+		6609F3995E7944FC8CECB710 /* FlyerViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED71754BF924F28A6BA6E7F /* FlyerViewerView.swift */; };
+		3B51A17E35BB44E6BA346574 /* LeaveAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E050686CF45C787AFD4A1 /* LeaveAppView.swift */; };
+		CC181D32426B4BFCA3DB0C54 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20958E3D19914C5E831D00A5 /* SettingsView.swift */; };
+		43535860BB3844009E0FF114 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECE765EA624295AEF0712A /* SplashView.swift */; };
+		23593D3DE4A745A3BBA4B1F5 /* TourOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE6DF67744A44F4AB2F646A /* TourOverlay.swift */; };
+		766EBFD405F34B8B8AD1C00D /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 628F6413650B44D188774571 /* click.wav */; };
+		6ECCC2DE92434F80AE43E87C /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 634970620CF140948E338240 /* tick.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,16 +52,37 @@
 		912596C4FF73D3B3B80914AA /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		1FF7C9EF464CB7FC77E02603 /* AttendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingService.swift; sourceTree = "<group>"; };
 		9F679547202DF86F464C7A45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
-		8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		E8969A761F551711FEDCE26F /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		C96C5B0109960A181EE29426 /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
-		2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		DCC6686BA01E1CE40D29576F /* events.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = events.json; sourceTree = "<group>"; };
 		957818ECB6A9811B7FA24A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81C13B209B6CFD249E82AC9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		958B1B4EB0B096BFECDC7CA6 /* RaveWatchLagos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaveWatchLagos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		698606C81C1949C2A3EF853F /* BugReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReport.swift; sourceTree = "<group>"; };
+		D72C5DAD472F4F56BA86B417 /* DateWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWindow.swift; sourceTree = "<group>"; };
+		4DCD5B38EDCC4AE1A1610F1F /* FlyerImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerImageCache.swift; sourceTree = "<group>"; };
+		E4FE653534814D77842EECA2 /* MetricsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsService.swift; sourceTree = "<group>"; };
+		7EEBB8FE8F79482E9D1A63C1 /* NewEventsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventsStore.swift; sourceTree = "<group>"; };
+		F3B26066106C4FA6B68CF42D /* PersistedIdSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedIdSet.swift; sourceTree = "<group>"; };
+		5D87BA21931D4030970AC556 /* RideLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLauncher.swift; sourceTree = "<group>"; };
+		647405308CF245C5B123D8E5 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
+		02FDA85D9EA84DF2A411B954 /* SoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundService.swift; sourceTree = "<group>"; };
+		4682A6D70C17446DBC8F7EF7 /* SupabaseCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseCounts.swift; sourceTree = "<group>"; };
+		D4378AB779744080AD9C017B /* ToastCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastCenter.swift; sourceTree = "<group>"; };
+		09281DE4461B40C1B5703DE9 /* TourStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourStore.swift; sourceTree = "<group>"; };
+		EE600C045524459381E05804 /* VersionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionLabel.swift; sourceTree = "<group>"; };
+		6C575BA1C08645CD91E5F77C /* AttendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingView.swift; sourceTree = "<group>"; };
+		21171B902FFB452CAF354193 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		622AB923463F43D9911491E7 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		99EBD883D6334E5484F05EB9 /* FlippableFlyerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippableFlyerView.swift; sourceTree = "<group>"; };
+		AED71754BF924F28A6BA6E7F /* FlyerViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyerViewerView.swift; sourceTree = "<group>"; };
+		250E050686CF45C787AFD4A1 /* LeaveAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveAppView.swift; sourceTree = "<group>"; };
+		20958E3D19914C5E831D00A5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2DECE765EA624295AEF0712A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		8FE6DF67744A44F4AB2F646A /* TourOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourOverlay.swift; sourceTree = "<group>"; };
+		628F6413650B44D188774571 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = file.wav; path = click.wav; sourceTree = "<group>"; };
+		634970620CF140948E338240 /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = file.wav; path = tick.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +114,8 @@
 			); path = Services; sourceTree = "<group>"; };
 		66186741B7DC6DE8646F56E0 /* Views */ = {isa = PBXGroup; children = (
 				9F679547202DF86F464C7A45 /* ContentView.swift */,
-				F3B29B1EDE9077AA0D8C791F /* DiscoverView.swift */,
-				8ADE6B4C131E3D02ADF5C5F2 /* EventRow.swift */,
 				E8969A761F551711FEDCE26F /* EventDetailView.swift */,
 				C96C5B0109960A181EE29426 /* FollowingView.swift */,
-				2CE6FBBD825DE610D8AFC21E /* ProfileView.swift */,
 				66B1D9FCCD2E3B76575DD57E /* PrivacyPolicyView.swift */,
 			); path = Views; sourceTree = "<group>"; };
 		7F84F3379E136D1AE12EB339 /* Resources */ = {isa = PBXGroup; children = (
@@ -95,6 +134,30 @@
 			C7725E4DBDC6F8990C483E98 /* Sources */,
 			99A053523B8E1E66A9491327 /* Frameworks */,
 			B647A333F7219FA2B3612A0C /* Resources */,
+				698606C81C1949C2A3EF853F /* BugReport.swift */,
+				D72C5DAD472F4F56BA86B417 /* DateWindow.swift */,
+				4DCD5B38EDCC4AE1A1610F1F /* FlyerImageCache.swift */,
+				E4FE653534814D77842EECA2 /* MetricsService.swift */,
+				7EEBB8FE8F79482E9D1A63C1 /* NewEventsStore.swift */,
+				F3B26066106C4FA6B68CF42D /* PersistedIdSet.swift */,
+				5D87BA21931D4030970AC556 /* RideLauncher.swift */,
+				647405308CF245C5B123D8E5 /* ShareService.swift */,
+				02FDA85D9EA84DF2A411B954 /* SoundService.swift */,
+				4682A6D70C17446DBC8F7EF7 /* SupabaseCounts.swift */,
+				D4378AB779744080AD9C017B /* ToastCenter.swift */,
+				09281DE4461B40C1B5703DE9 /* TourStore.swift */,
+				EE600C045524459381E05804 /* VersionLabel.swift */,
+				6C575BA1C08645CD91E5F77C /* AttendingView.swift */,
+				21171B902FFB452CAF354193 /* EventCardView.swift */,
+				622AB923463F43D9911491E7 /* FeedView.swift */,
+				99EBD883D6334E5484F05EB9 /* FlippableFlyerView.swift */,
+				AED71754BF924F28A6BA6E7F /* FlyerViewerView.swift */,
+				250E050686CF45C787AFD4A1 /* LeaveAppView.swift */,
+				20958E3D19914C5E831D00A5 /* SettingsView.swift */,
+				2DECE765EA624295AEF0712A /* SplashView.swift */,
+				8FE6DF67744A44F4AB2F646A /* TourOverlay.swift */,
+				628F6413650B44D188774571 /* click.wav */,
+				634970620CF140948E338240 /* tick.wav */,
 		); buildRules = (
 		); dependencies = (
 		); name = RaveWatchLagos; productName = RaveWatchLagos; productReference = 958B1B4EB0B096BFECDC7CA6 /* RaveWatchLagos.app */; productType = "com.apple.product-type.application"; };
@@ -123,7 +186,9 @@
 				1BFB8452BC4F0E8CDCEDEED0 /* events.json in Resources */,
 				C950ECD889C4A8E7CF834114 /* Assets.xcassets in Resources */,
 				352084B76576FDA5269CE1B8 /* Preview Assets.xcassets in Resources */,
-			); runOnlyForDeploymentPostprocessing = 0; };
+				766EBFD405F34B8B8AD1C00D /* click.wav in Resources */,
+				6ECCC2DE92434F80AE43E87C /* tick.wav in Resources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -134,13 +199,32 @@
 				1E76900335F4CA8478598577 /* UserStore.swift in Sources */,
 				51954633D6BE1CC2F56F08E5 /* AttendingService.swift in Sources */,
 				C2A1C293190C1B34CF55B6BE /* ContentView.swift in Sources */,
-				4EF7B82A2750194F4DFF94AD /* DiscoverView.swift in Sources */,
-				4A24C12A58D7BA076ECF181D /* EventRow.swift in Sources */,
 				E8298F402501B39167CAF4A5 /* EventDetailView.swift in Sources */,
 				A742BF0E93DFAB1A487C6D8A /* FollowingView.swift in Sources */,
-				8B64210A773B43DD076D020C /* ProfileView.swift in Sources */,
 				11B0910BAE3B58E73468806E /* PrivacyPolicyView.swift in Sources */,
-			); runOnlyForDeploymentPostprocessing = 0; };
+				B2F61D9B05BC4234B1DCB861 /* BugReport.swift in Sources */,
+				23EC75F2014B4E168D2FFE91 /* DateWindow.swift in Sources */,
+				3ADCEDBB54CA469BB67A089A /* FlyerImageCache.swift in Sources */,
+				1CC125BAC72846EA8942B759 /* MetricsService.swift in Sources */,
+				46E3B7F390644CE79CD8A9EA /* NewEventsStore.swift in Sources */,
+				155850F907EF4801BD7A432D /* PersistedIdSet.swift in Sources */,
+				BB1EB301ABF04649ABD402FD /* RideLauncher.swift in Sources */,
+				DA017E6A52B54E3EA5AEEF96 /* ShareService.swift in Sources */,
+				318B90D574054538B578C866 /* SoundService.swift in Sources */,
+				0BC2F67A83FE41F393E8BF5E /* SupabaseCounts.swift in Sources */,
+				66A6D4E8E69540DBB231B008 /* ToastCenter.swift in Sources */,
+				A1BB949ABC7B42B184FE7A4D /* TourStore.swift in Sources */,
+				5A2E3626433A4AABA70E3478 /* VersionLabel.swift in Sources */,
+				B07404D1E696432CA3729450 /* AttendingView.swift in Sources */,
+				26EA5C41C8BA427AB3339977 /* EventCardView.swift in Sources */,
+				86532000E558487A94A24DE5 /* FeedView.swift in Sources */,
+				054ED4712B59450DBE8012C1 /* FlippableFlyerView.swift in Sources */,
+				6609F3995E7944FC8CECB710 /* FlyerViewerView.swift in Sources */,
+				3B51A17E35BB44E6BA346574 /* LeaveAppView.swift in Sources */,
+				CC181D32426B4BFCA3DB0C54 /* SettingsView.swift in Sources */,
+				43535860BB3844009E0FF114 /* SplashView.swift in Sources */,
+				23593D3DE4A745A3BBA4B1F5 /* TourOverlay.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -258,21 +342,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = RaveWatchLagos;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = app.ravewatchlagos.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
@@ -283,21 +367,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = RaveWatchLagos;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 5.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = app.ravewatchlagos.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;

@@ -57,7 +57,6 @@ final class SupabaseAttendingCounts {
             guard let http = response as? HTTPURLResponse, http.statusCode == 200 else { return nil }
             guard let rows = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]],
                   let first = rows.first else { return 0 }
-            if rows.isEmpty { return 0 }
             return (first["count"] as? NSNumber)?.intValue
         } catch {
             return nil
@@ -150,7 +149,6 @@ final class SupabaseFollowingCounts {
             guard let http = response as? HTTPURLResponse, http.statusCode == 200 else { return nil }
             guard let rows = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]],
                   let first = rows.first else { return 0 }
-            if rows.isEmpty { return 0 }
             return (first["count"] as? NSNumber)?.intValue
         } catch {
             return nil
